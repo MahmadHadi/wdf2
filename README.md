@@ -1,59 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+# Product Management System
 ```
+Mahmadhadi Nayani 
+202309050900`39`
+Sub: Web Development Framework 
+```
+A simple Product Management System built with Laravel for Web Development Framework college assignment. This application demonstrates full CRUD operations (Create, Read, Update, Delete) with search functionality and form validation.
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## Screen recording
+<video controls muted autoplay src="ala2.webm" title="WDF | ALA2"></video>
 
-## Contributing
+## Features
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Create Product - Add new products with name, description, price and quantity
+- Read Products - View all products in a table format
+- Update Product - Edit existing product details with pre-filled forms
+- Delete Product - Remove products with confirmation dialog
+- Search Functionality - Filter products by name using Eloquent queries
+- Form Validation - Server-side validation with error messages
 
-## Code of Conduct
+## Technologies Used
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Backend: Laravel 13 (PHP 8.4)
+- Database: SQLite
+- Frontend: Blade Templates, HTML5, CSS3
+- ORM: Eloquent
 
-## Security Vulnerabilities
+## Installation
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Clone the repository
+   - git clone https://github.com/MahmadHadi/wdf2
+   - cd product-management-system
 
-## License
+2. Install dependencies
+   - composer install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# wdf2
+3. Copy environment file
+   - cp .env.example .env
+
+4. Create SQLite database
+   - touch database/database.sqlite
+
+5. Update .env file
+   - DB_CONNECTION=sqlite
+
+6. Generate application key
+   - php artisan key:generate
+
+7. Run migrations
+   - php artisan migrate
+
+8. Start the server
+   - php artisan serve
+
+9. Open in browser
+    - http://127.0.0.1:8000
+
+## Database Schema
+
+- id (primary key)
+- name (string)
+- description (text, nullable)
+- price (decimal 10,2)
+- quantity (integer)
+- created_at (timestamp)
+- updated_at (timestamp)
+
+## Validation Rules
+
+- name: required, string, max 255 characters
+- price: required, numeric, minimum 0
+- quantity: required, integer, minimum 0
+- description: optional, string
+
+## Routes
+
+- GET /products - Display all products
+- GET /products/create - Show create form
+- POST /products - Store new product
+- GET /products/{id} - Show single product
+- GET /products/{id}/edit - Show edit form
+- PUT /products/{id} - Update product
+- DELETE /products/{id} - Delete product
+
+## Author
+
+- Mahmadhadi Nayani 
+- GMIU
+- Sub: Web Development Framework 
+
+## GitHub Repository
+
+[/mahmadhadi/wdf2](https://github.com/MahmadHadi/wdf2)
