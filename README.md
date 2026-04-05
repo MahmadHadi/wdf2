@@ -6,8 +6,8 @@ Sub: Web Development Framework
 ```
 A simple Product Management System built with Laravel for Web Development Framework college assignment. This application demonstrates full CRUD operations (Create, Read, Update, Delete) with search functionality and form validation.
 
-## Screen recording
-<video controls muted autoplay src="ala2.webm" title="WDF | ALA2"></video>
+## Screen Recording
+[Watch Screen Recording](ala2.webm)
 
 ## Features
 
